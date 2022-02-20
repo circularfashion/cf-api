@@ -1,0 +1,296 @@
+[
+  {
+    "id": 1,
+    "name": "TestProduct",
+    "company": "TestCompany",
+    "variations": [
+      {
+        "name": "One Variation",
+        "template": "templates/base.html",
+        "schema_version": "3",
+        "make_immutable": false,
+        "mutable_data": {
+          "description": "This is the one variation of the TestProduct.",
+          "PO_number_product": null,
+          "season": "summer",
+          "year": 2018,
+          "parent_company": null,
+          "custom": null,
+          "brand": "Very Cool Brand",
+          "brand_description": null,
+          "brand_image": null,
+          "logo": null,
+          "segment": "mid_price",
+          "price_currency": "eur",
+          "price": null,
+          "strategy_description": null,
+          "care_guide": null,
+          "sustainability_statement": null,
+          "sustainability_guide_image": null
+        },
+        "immutable_data": {
+          "product_name": "Variation 1 of TestProduct",
+          "sku": "4k24j2k3",
+          "gtin": null,
+          "colourway": "So many colours!",
+          "product_category": "other",
+          "product_type": "other",
+          "size_metric": "",
+          "size": "",
+          "weight": 0.8,
+          "weight_unit": "kg",
+          "disassembly_instructions_sorters": "",
+          "disassembly_instructions_user": "Take off the buttons",
+          "assemblies": [
+            {
+              "name": "Shirt",
+              "materials": [
+                {
+                  "id": 4,
+                  "components": [
+                    {
+                      "component_name": "some leather",
+                      "content": "cotton",
+                      "percentage": 100,
+                      "is_recycled": false,
+                      "source_recycled_input": null,
+                      "source_raw_material": null,
+                      "steps": [
+                        {
+                          "country": "NGA",
+                          "company_name": null,
+                          "street": null,
+                          "postal": null,
+                          "city": null,
+                          "oar": null
+                        }
+                      ],
+                      "part": null
+                    }
+                  ],
+                  "steps": [
+                    {
+                      "country": "CHN",
+                      "company_name": null,
+                      "street": null,
+                      "postal": null,
+                      "city": null,
+                      "oar": null
+                    },
+                    {
+                      "country": "CHN",
+                      "company_name": null,
+                      "street": null,
+                      "postal": null,
+                      "city": null,
+                      "oar": null,
+                      "dye_stuff": "azo_dye",
+                      "dyeing_process": "yarn_dyed"
+                    }
+                  ],
+                  "thumbnail": null,
+                  "colours": [],
+                  "technical_data_sheet": null,
+                  "chemical_compliance": [],
+                  "name": "TestMaterial",
+                  "article_number": "222",
+                  "description": "Testing the Serializer",
+                  "consumption": null,
+                  "consumption_unit": null,
+                  "water_properties": null,
+                  "water_resistance_test_report": null,
+                  "material_properties_other": null,
+                  "category": "fabric",
+                  "pattern_type": null,
+                  "material_type": null,
+                  "staple_fibre_length": null,
+                  "width": null,
+                  "elasticity_diagonal": null,
+                  "elasticity_2_way_stretch": null,
+                  "elasticity_4_way_stretch": null,
+                  "weight": null,
+                  "material_properties": [],
+                  "polymorphic_ctype": {
+                    "id": 3,
+                    "app_label": "dragons",
+                    "model": "fabricv300"
+                  }
+                },
+                {
+                  "id": 5,
+                  "components": [
+                    {
+                      "component_name": "some leather",
+                      "content": "cotton",
+                      "percentage": 100,
+                      "is_recycled": false,
+                      "source_recycled_input": null,
+                      "source_raw_material": null,
+                      "steps": [
+                        {
+                          "country": "NGA",
+                          "company_name": null,
+                          "street": null,
+                          "postal": null,
+                          "city": null,
+                          "oar": null
+                        }
+                      ],
+                      "part": null
+                    }
+                  ],
+                  "steps": [
+                    {
+                      "country": "CHN",
+                      "company_name": null,
+                      "street": null,
+                      "postal": null,
+                      "city": null,
+                      "oar": null
+                    },
+                    {
+                      "country": "CHN",
+                      "company_name": null,
+                      "street": null,
+                      "postal": null,
+                      "city": null,
+                      "oar": null,
+                      "dye_stuff": "azo_dye",
+                      "dyeing_process": "yarn_dyed"
+                    }
+                  ],
+                  "thumbnail": null,
+                  "colours": [],
+                  "technical_data_sheet": null,
+                  "chemical_compliance": [],
+                  "name": "TestMaterial",
+                  "article_number": "222",
+                  "description": "Testing the Serializer",
+                  "consumption": null,
+                  "consumption_unit": null,
+                  "water_properties": null,
+                  "water_resistance_test_report": null,
+                  "material_properties_other": null,
+                  "category": "fabric",
+                  "pattern_type": null,
+                  "material_type": null,
+                  "staple_fibre_length": null,
+                  "width": null,
+                  "elasticity_diagonal": null,
+                  "elasticity_2_way_stretch": null,
+                  "elasticity_4_way_stretch": null,
+                  "weight": null,
+                  "material_properties": [],
+                  "polymorphic_ctype": {
+                    "id": 3,
+                    "app_label": "dragons",
+                    "model": "fabricv300"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Buttons",
+              "materials": [
+                {
+                  "id": 6,
+                  "components": [],
+                  "steps": [
+                    {
+                      "country": "CHN",
+                      "company_name": null,
+                      "street": null,
+                      "postal": null,
+                      "city": null,
+                      "oar": null
+                    }
+                  ],
+                  "thumbnail": null,
+                  "colours": [],
+                  "technical_data_sheet": null,
+                  "chemical_compliance": [],
+                  "name": "TestTrim",
+                  "article_number": null,
+                  "description": "Testing the Serializer",
+                  "consumption": null,
+                  "consumption_unit": null,
+                  "water_properties": null,
+                  "water_resistance_test_report": null,
+                  "material_properties_other": null,
+                  "category": "trim",
+                  "pattern_type": null,
+                  "material_type": null,
+                  "width": null,
+                  "elasticity_diagonal": null,
+                  "elasticity_2_way_stretch": null,
+                  "elasticity_4_way_stretch": null,
+                  "weight": null,
+                  "material_properties": [],
+                  "polymorphic_ctype": {
+                    "id": 2,
+                    "app_label": "dragons",
+                    "model": "trimv300"
+                  }
+                }
+              ]
+            }
+          ],
+          "product_steps": [
+            {
+              "country": "DEU",
+              "company_name": null,
+              "street": null,
+              "postal": null,
+              "city": null,
+              "oar": null,
+              "dye_stuff": "beetroot",
+              "dyeing_process": "dip-dye",
+              "step_type": "dyeing"
+            },
+            {
+              "country": "DEU",
+              "company_name": "Waschmaschine",
+              "street": "Kaiserstra\\u00dfe",
+              "postal": null,
+              "city": null,
+              "oar": null,
+              "step_type": "laundry"
+            },
+            {
+              "country": "DEU",
+              "company_name": "Waschmaschine",
+              "street": "Kaiserstra\\u00dfe",
+              "postal": null,
+              "city": null,
+              "oar": null,
+              "product_finishing": "enzyme_washing",
+              "step_type": "finishing"
+            },
+            {
+              "country": "NLD",
+              "company_name": null,
+              "street": null,
+              "postal": null,
+              "city": null,
+              "oar": null,
+              "print_stuff": "something",
+              "printing_process": "Direct Printed",
+              "step_type": "printing"
+            }
+          ],
+          "colours": [
+            {
+              "colour": "green"
+            },
+            {
+              "colour": "blue"
+            },
+            {
+              "colour": "yellow"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
