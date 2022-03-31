@@ -81,7 +81,7 @@ Otherwise, you will receive:
 When sending a messages to any endpoint, the `header` must contain the `access` token prefixed with the string "JWT":
 ```
 Content-Type: application/json
-Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1MzYyMDQwLCJqdGkiOiJlMmQzNTFiNmUzYzU0NmI2ODk5ZmM5YWUyZTFiZTFhZiIsInVzZXJfaWQiOjIyfQ.lfPywjR0h4V2ZCkbxffwVvV-uvScvoU31x9IQybutn0
+Access-Token: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1MzYyMDQwLCJqdGkiOiJlMmQzNTFiNmUzYzU0NmI2ODk5ZmM5YWUyZTFiZTFhZiIsInVzZXJfaWQiOjIyfQ.lfPywjR0h4V2ZCkbxffwVvV-uvScvoU31x9IQybutn0
 ```
 # Endpoints
 ## Create
