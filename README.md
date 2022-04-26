@@ -90,6 +90,10 @@ POST /products
 ```
 ### Payload
 Refer to [product_payload_definition.json](product_payload_definition.json) and [product_payload_sample.json](product_payload_sample.json) for the payload format.
+
+- `base64_image_file` needs to be replaced by a base64 encoding of an image file ("jpeg", "jpg" or "png").
+- `base64_pdf_file` needs to be replaced by a base64 encoding of a file ("pdf", "jpeg", "jpg or "png").
+
 ### Response
 The response contains a generated `product_id`. You can use this `product_id` to view or delete the product.
 ```

@@ -26,7 +26,9 @@
           "strategy_description": null,
           "care_guide": null,
           "sustainability_statement": null,
-          "sustainability_guide_image": null
+          "sustainability_guide_image": null,
+          "product_image":[],
+          "care_image": []
         },
         "immutable_data": {
           "product_name": "Variation 1 of TestProduct",

@@ -41,10 +41,6 @@
               "display_name": "base.html"
             },
             {
-              "value": "templates/zalando.html",
-              "display_name": "zalando.html"
-            },
-            {
               "value": "templates/base-lifecycle.html",
               "display_name": "base-lifecycle.html"
             }
@@ -140,6 +136,12 @@
               "required": false,
               "read_only": false,
               "label": "Logo"
+            },
+            "production_image": {
+              "type": "image upload",
+              "required": false,
+              "read_only": false,
+              "label": "Production image"
             },
             "segment": {
               "type": "choice",
@@ -240,11 +242,11 @@
               "read_only": false,
               "label": "Sustainability statement"
             },
-            "circular_design_strategies": {
+            "circular_design_strategy": {
               "type": "field",
               "required": false,
               "read_only": false,
-              "label": "Circular design strategies",
+              "label": "Circular design strategy",
               "child": {
                 "type": "nested object",
                 "required": false,
@@ -313,11 +315,11 @@
                 }
               }
             },
-            "care_images": {
+            "care_image": {
               "type": "field",
               "required": false,
               "read_only": false,
-              "label": "Care images",
+              "label": "Care image",
               "child": {
                 "type": "nested object",
                 "required": false,
@@ -332,11 +334,11 @@
                 }
               }
             },
-            "product_images": {
+            "product_image": {
               "type": "field",
               "required": false,
               "read_only": false,
-              "label": "Product images",
+              "label": "Product image",
               "child": {
                 "type": "nested object",
                 "required": false,
@@ -582,11 +584,11 @@
               "read_only": false,
               "label": "Disassembly instructions user"
             },
-            "certifications": {
+            "certification": {
               "type": "field",
               "required": false,
               "read_only": false,
-              "label": "Certifications",
+              "label": "Certification",
               "child": {
                 "type": "nested object",
                 "required": false,
@@ -649,8 +651,18 @@
                       {
                         "value": "v_label",
                         "display_name": "V-Label"
+                      },
+                      {
+                        "value": "biore",
+                        "display_name": "bioRe®"
                       }
                     ]
+                  },
+                  "certification_file": {
+                    "type": "file upload",
+                    "required": false,
+                    "read_only": false,
+                    "label": "Certification file"
                   }
                 }
               }
@@ -706,129 +718,19 @@
                 "required": false,
                 "read_only": false,
                 "children": {
-                  "colour": {
-                    "type": "choice",
-                    "required": false,
+                  "label": {
+                    "type": "string",
+                    "required": true,
                     "read_only": false,
-                    "label": "Colour",
-                    "choices": [
-                      {
-                        "value": "beige",
-                        "display_name": "Beige"
-                      },
-                      {
-                        "value": "black",
-                        "display_name": "Black"
-                      },
-                      {
-                        "value": "black_white",
-                        "display_name": "Black & White"
-                      },
-                      {
-                        "value": "blue",
-                        "display_name": "Blue"
-                      },
-                      {
-                        "value": "burgundy",
-                        "display_name": "Burgundy"
-                      },
-                      {
-                        "value": "brown",
-                        "display_name": "Brown"
-                      },
-                      {
-                        "value": "coral",
-                        "display_name": "Coral"
-                      },
-                      {
-                        "value": "indigo",
-                        "display_name": "Indigo"
-                      },
-                      {
-                        "value": "gold",
-                        "display_name": "Gold"
-                      },
-                      {
-                        "value": "green",
-                        "display_name": "Green"
-                      },
-                      {
-                        "value": "grey",
-                        "display_name": "Grey"
-                      },
-                      {
-                        "value": "khaki",
-                        "display_name": "Khaki"
-                      },
-                      {
-                        "value": "multicoloured",
-                        "display_name": "Multi-coloured"
-                      },
-                      {
-                        "value": "navy",
-                        "display_name": "Navy"
-                      },
-                      {
-                        "value": "nude",
-                        "display_name": "Nude"
-                      },
-                      {
-                        "value": "off-white",
-                        "display_name": "Off-white"
-                      },
-                      {
-                        "value": "orange",
-                        "display_name": "Orange"
-                      },
-                      {
-                        "value": "pink",
-                        "display_name": "Pink"
-                      },
-                      {
-                        "value": "purple",
-                        "display_name": "Purple"
-                      },
-                      {
-                        "value": "red",
-                        "display_name": "Red"
-                      },
-                      {
-                        "value": "rose",
-                        "display_name": "Rose"
-                      },
-                      {
-                        "value": "silver",
-                        "display_name": "Silver"
-                      },
-                      {
-                        "value": "taupe",
-                        "display_name": "Taupe"
-                      },
-                      {
-                        "value": "teal",
-                        "display_name": "Teal"
-                      },
-                      {
-                        "value": "turquoise",
-                        "display_name": "Turquoise"
-                      },
-                      {
-                        "value": "uncoloured",
-                        "display_name": "Uncoloured"
-                      },
-                      {
-                        "value": "other",
-                        "display_name": "Other"
-                      },
-                      {
-                        "value": "white",
-                        "display_name": "White"
-                      },
-                      {
-                        "value": "yellow",
-                        "display_name": "Yellow"
-                      }
-                    ]
+                    "label": "Label",
+                    "max_length": 32
+                  },
+                  "value": {
+                    "type": "string",
+                    "required": true,
+                    "read_only": false,
+                    "label": "Value",
+                    "max_length": 16
                   }
                 }
               }

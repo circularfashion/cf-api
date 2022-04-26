@@ -10,30 +10,35 @@
         "description": "This is the one variation of the TestProduct.",
         "season": "summer",
         "brand": "Very Cool Brand",
-        "segment": "mid_price",
-        "price_currency": "eur",
-        "circular_design_strategies": [
+        "logo": base64_image_file,
+        "brand_image": base64_image_file,
+        "sustainability_guide_image": base64_image_file,
+        "production_description": "This Variation was probably produced somewhere. Who knows.",
+        "product_image": [
           {
-            "circular_design_strategy": "modularity"
+            "image": base64_image_file
           },
           {
-            "circular_design_strategy": "repairability"
+            "image": base64_image_file
           }
         ],
-        "production_description": "This Variation was probably produced somewhere. Who knows."
+        "care_image": [
+          {
+            "image": base64_image_file
+          }
+        ]
       },
       "immutable_data": {
         "product_name": "Variation 1 of TestProduct",
         "sku": "4k24j2k3",
-        "colourway": "So many colours!",
-        "weight": 0.8,
-        "weight_unit": "kg",
-        "disassembly_instructions_user": "Take off the buttons",
         "assemblies": [
           {
             "name": "Shirt",
             "materials": [
               {
+                "thumbnail": base64_image_file,
+                "technical_data_sheet": base64_file,
+                "water_resistance_test_report": base64_file,
                 "name": "TestMaterial",
                 "category": "fabric",
                 "article_number": 222,
@@ -60,86 +65,33 @@
                     "dye_stuff": "azo_dye",
                     "country": "CHN"
                   }
-                ]
-              },
-              {
-                "name": "TestMaterial",
-                "category": "fabric",
-                "article_number": 222,
-                "description": "Testing the Serializer",
-                "components": [
+                ],
+                "biodegradability_certification": [
                   {
-                    "component_name": "some leather",
-                    "content": "cotton",
-                    "steps": [
-                      {
-                        "country": "NGA"
-                      }
-                    ]
+                    "certification": "din_en_iso_9408",
+                    "biodegradability_certification_file": base64_file
                   }
                 ],
-                "steps": [
+                "social_environmental_certification": [
                   {
-                    "step_type": "spinning",
-                    "country": "CHN"
-                  },
-                  {
-                    "step_type": "dyeing",
-                    "dyeing_process": "yarn_dyed",
-                    "dye_stuff": "azo_dye",
-                    "country": "CHN"
+                    "certification": "international_labour_organization",
+                    "social_environmental_certification_file": base64_file
                   }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "Buttons",
-            "materials": [
-              {
-                "name": "TestTrim",
-                "category": "trim",
-                "description": "Testing the Serializer",
-                "steps": [
+                ],
+                "material_safety_data_sheet": [
                   {
-                    "step_type": "production",
-                    "country": "CHN"
+                    "certification": "msds_finishing",
+                    "material_safety_data_sheet_file": base64_file
                   }
                 ]
               }
             ]
           }
         ],
-        "colours": [
-          "green",
-          "blue",
-          "yellow"
-        ],
-        "product_steps": [
+        "certification": [
           {
-            "step_type": "dyeing",
-            "country": "DEU",
-            "dyeing_process": "dip-dye",
-            "dye_stuff": "beetroot"
-          },
-          {
-            "step_type": "laundry",
-            "country": "DEU",
-            "street": "Kaiserstra\\u00dfe",
-            "company_name": "Waschmaschine"
-          },
-          {
-            "step_type": "finishing",
-            "product_finishing": "enzyme_washing",
-            "country": "DEU",
-            "street": "Kaiserstra\\u00dfe",
-            "company_name": "Waschmaschine"
-          },
-          {
-            "step_type": "printing",
-            "printing_process": "Direct Printed",
-            "print_stuff": "something",
-            "country": "NLD"
+            "certification_type": "eu_ecolabel",
+            "certification_file": base64_file
           }
         ]
       }
