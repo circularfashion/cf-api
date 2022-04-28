@@ -95,6 +95,8 @@ Refer to [product_payload_definition.json](product_payload_definition.json) and 
 - `base64_pdf_file` needs to be replaced by a base64 encoding, smaller than 5MB, of a file ("pdf", "jpeg", "jpg or "png").
 
 ### Response
+If successful, the API will send an HTTP response `201`.
+
 The response contains a generated `product_id`. You can use this `product_id` to view or delete the product.
 ```
 {
