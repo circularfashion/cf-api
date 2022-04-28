@@ -1,100 +1,90 @@
 {
-  "name": "TestProduct",
-  "company": "TestCompany",
-  "variations": [
-    {
-      "name": "One Variation",
-      "template": "templates/base.html",
-      "schema_version": 3,
-      "mutable_data": {
-        "description": "This is the one variation of the TestProduct.",
-        "season": "summer",
-        "brand": "Very Cool Brand",
-        "logo": base64_image_file,
-        "brand_image": base64_image_file,
-        "sustainability_guide_image": base64_image_file,
-        "production_description": "This Variation was probably produced somewhere. Who knows.",
-        "product_image": [
-          {
-            "image": base64_image_file
-          },
-          {
-            "image": base64_image_file
-          }
-        ],
-        "care_image": [
-          {
-            "image": base64_image_file
-          }
-        ]
-      },
-      "immutable_data": {
-        "product_name": "Variation 1 of TestProduct",
-        "sku": "4k24j2k3",
-        "assemblies": [
-          {
-            "name": "Shirt",
-            "materials": [
-              {
-                "thumbnail": base64_image_file,
-                "technical_data_sheet": base64_file,
-                "water_resistance_test_report": base64_file,
-                "name": "TestMaterial",
-                "category": "fabric",
-                "article_number": 222,
-                "description": "Testing the Serializer",
-                "components": [
-                  {
-                    "component_name": "some leather",
-                    "content": "cotton",
-                    "steps": [
-                      {
-                        "country": "NGA"
-                      }
-                    ]
-                  }
+    "name": "TestProduct",
+    "company": "TestCompany",
+    "variations": [
+        {
+            "name": "One Variation",
+            "template": "templates/base.html",
+            "schema_version": 3,
+            "mutable_data": {
+                "description": "This is the one variation of the TestProduct.",
+                "season": "summer",
+                "brand": "Very Cool Brand",
+                "logo": base64_image_file,
+                "brand_image": base64_image_file,
+                "sustainability_guide_image": base64_image_file,
+                "production_description": "This Variation was probably produced somewhere. Who knows.",
+                "product_image": [
+                    {
+                        "image_data": base64_image_file
+                    },
+                    {
+                        "image_data": base64_image_file
+                    }
                 ],
-                "steps": [
-                  {
-                    "step_type": "spinning",
-                    "country": "CHN"
-                  },
-                  {
-                    "step_type": "dyeing",
-                    "dyeing_process": "yarn_dyed",
-                    "dye_stuff": "azo_dye",
-                    "country": "CHN"
-                  }
-                ],
-                "biodegradability_certification": [
-                  {
-                    "certification": "din_en_iso_9408",
-                    "biodegradability_certification_file": base64_file
-                  }
-                ],
-                "social_environmental_certification": [
-                  {
-                    "certification": "international_labour_organization",
-                    "social_environmental_certification_file": base64_file
-                  }
-                ],
-                "material_safety_data_sheet": [
-                  {
-                    "certification": "msds_finishing",
-                    "material_safety_data_sheet_file": base64_file
-                  }
+                "care_image": [
+                    {
+                        "image_data": base64_image_file
+                    }
                 ]
-              }
-            ]
-          }
-        ],
-        "certification": [
-          {
-            "certification_type": "eu_ecolabel",
-            "certification_file": base64_file
-          }
-        ]
-      }
-    }
-  ]
+            },
+            "immutable_data": {
+                "product_name": "Variation 1 of TestProduct",
+                "sku": "4k24j2k3",
+                "assemblies": [
+                    {
+                        "name": "Shirt",
+                        "materials": [
+                            {
+                              "thumbnail": base64_image_file,
+                              "technical_data_sheet": base64_file,
+                              "water_resistance_test_report": base64_file,
+                              "name": "TestMaterial",
+                              "category": "fabric",
+                              "article_number": 222,
+                              "description": "Testing the Serializer",
+                              "components": [{
+                                  "component_name": "some leather",
+                                  "content": "cotton",
+                                  "steps": [{
+                                      "country": "NGA"
+                                  }]
+                              }],
+                              "steps": [
+                                  {
+                                      "step_type": "spinning",
+                                      "country": "CHN"
+                                  },
+                                  {
+                                      "step_type": "dyeing",
+                                      "dyeing_process": "yarn_dyed",
+                                      "dye_stuff": "azo_dye",
+                                      "country": "CHN"
+                                  }
+                              ],
+                              "biodegradability_certification": [{
+                                  "certification": "din_en_iso_9408",
+                                  "file_data": base64_file
+                              }],
+                              "social_environmental_certification": [{
+                                  "certification": "international_labour_organization",
+                                  "file_data": base64_file
+                              }],
+                              "material_safety_data_sheet": [{
+                                  "certification": "msds_finishing",
+                                  "file_data": base64_file
+                              }]
+                          }
+                        ]
+                    },
+                ],
+                "certification": [
+                    {
+                        "certification_type": "eu_ecolabel",
+                        "file_data": base64_file
+                    }
+                ]
+            }
+        }
+    ]
 }
