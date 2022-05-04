@@ -7,8 +7,9 @@ Once the API for your account is enabled, you can use the instructions below to 
 https://app.circular.fashion/api
 ```
 # Authentication
-Obtain an API key through the frontend. This is documented here: https://circularfashion.atlassian.net/wiki/spaces/CF/pages/628064257/API+Key+Documentation+1.0.0
+Obtain an API key at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
 
+The API key is on a company basis, not on a user basis.
 
 ## Verify an API Key
 ```
