@@ -7,81 +7,34 @@ Once the API for your account is enabled, you can use the instructions below to 
 https://app.circular.fashion/api
 ```
 # Authentication
-Get an authentication token using JWT authentication. The token will last 60 minutes, at which point it will need to be
-refreshed or a new one generated.
+Obtain an API key at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
 
-## Create an access token
-```
-POST /jwt/create
-```
-### Payload
-`username` and `password` of a user in the account with API access enabled.
-```
-{
-    "username": <your_username>,
-    "password": <your_password>
-}
-```
-### Response
-You will receive 2 tokens:
+The API key is on a company basis, not on a user basis.
 
-- `access` token - Used to access API endpoints. Lasts 60 minutes.
-- `refresh` token - Used to refresh the `access` token. Lasts 1 week. After that, you must create a new
-`access` token using `username` and `password` login credentials.
-
+## Verify an API Key
 ```
-{
-    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NTk2MjM0MSwianRpIjoiODA2YWUwNzUwN2Y4NGExN2IxMTMxYjRlMjJjZGU4ZmEiLCJ1c2VyX2lkIjoyMn0.qzmE4lL1TAvt2WdcigHdgoAJtMWQCQgcPERfODl5x6E",
-    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1MzYxMTQxLCJqdGkiOiJjYWIzMjI0N2MxZDA0N2M1OWMzMDdiMzU1ZTdiM2I3MCIsInVzZXJfaWQiOjIyfQ.d0md3S3yUgpbAoW5_XVaiBGBnnlXG2OdwvXkgXzqGco"
-}
-```
-
-## Refresh an access token
-```
-POST /jwt/refresh
-```
-### Payload
-Provide the `refresh` token received when creating the `access` token.
-```
-{
-    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NTk2MjM0MSwianRpIjoiODA2YWUwNzUwN2Y4NGExN2IxMTMxYjRlMjJjZGU4ZmEiLCJ1c2VyX2lkIjoyMn0.qzmE4lL1TAvt2WdcigHdgoAJtMWQCQgcPERfODl5x6E",
-}
-```
-### Response
-The response will contain a new `access` token.
-```
-{
-    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1MzYyMDQwLCJqdGkiOiJlMmQzNTFiNmUzYzU0NmI2ODk5ZmM5YWUyZTFiZTFhZiIsInVzZXJfaWQiOjIyfQ.lfPywjR0h4V2ZCkbxffwVvV-uvScvoU31x9IQybutn0"
-}
-```
-
-## Verify an access token
-```
-POST /jwt/verify
+POST /users/api/v1/api-key/test/
 ```
 ### Payload
 ```
-{
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1MzYxMTQxLCJqdGkiOiJjYWIzMjI0N2MxZDA0N2M1OWMzMDdiMzU1ZTdiM2I3MCIsInVzZXJfaWQiOjIyfQ.d0md3S3yUgpbAoW5_XVaiBGBnnlXG2OdwvXkgXzqGco",
-}
+None
 ```
 ### Response
-If the token is valid, you will receive an empty JSON object:
+If the key is valid, you will receive an JSON object:
 ```
-{}
+{"success": true}
 ```
-Otherwise, you will receive:
+Otherwise, you will receive an JSON object:
 ```
-{
-    "detail": "Token is invalid or expired",
-    "code": "token_not_valid"
-}
+{"success": false}
 ```
+
+or an response code 403
 ## Using the access token
-When sending a messages to any endpoint, the `header` must contain the `access` token prefixed with the string "JWT":
+When sending a messages to any endpoint, the `header` must contain `Authorization: Api-Key <key>`:
 ```
 Content-Type: application/json
-Access-Token: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1MzYyMDQwLCJqdGkiOiJlMmQzNTFiNmUzYzU0NmI2ODk5ZmM5YWUyZTFiZTFhZiIsInVzZXJfaWQiOjIyfQ.lfPywjR0h4V2ZCkbxffwVvV-uvScvoU31x9IQybutn0
+Authorization: Api-Key <key>
 ```
 # Endpoints
 ## Create
