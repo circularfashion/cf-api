@@ -1,841 +1,743 @@
 {
-  "name": {
-    "type": "string",
-    "required": true,
-    "read_only": false,
-    "label": "Name",
-    "max_length": 120
-  },
-  "company": {
-    "type": "string",
-    "required": true,
-    "read_only": false,
-    "label": "Company",
-    "max_length": 120
-  },
-  "variations": {
-    "type": "field",
-    "required": true,
-    "read_only": false,
-    "label": "Variations",
-    "child": {
-      "type": "nested object",
-      "required": true,
-      "read_only": false,
-      "children": {
-        "name": {
-          "type": "string",
-          "required": true,
-          "read_only": false,
-          "label": "Name",
-          "max_length": 120
-        },
-        "template": {
-          "type": "choice",
-          "required": false,
-          "read_only": false,
-          "label": "Template",
-          "choices": [
-            {
-              "value": "templates/base.html",
-              "display_name": "base.html"
-            },
-            {
-              "value": "templates/zalando.html",
-              "display_name": "zalando.html"
-            },
-            {
-              "value": "templates/base-lifecycle.html",
-              "display_name": "base-lifecycle.html"
-            }
-          ]
-        },
-        "schema_version": {
-          "type": "choice",
-          "required": false,
-          "read_only": false,
-          "label": "Schema version",
-          "choices": [
-            {
-              "value": "3",
-              "display_name": "3"
-            },
-            {
-              "value": "2",
-              "display_name": "2"
-            }
-          ]
-        },
-        "make_immutable": {
-          "type": "boolean",
-          "required": false,
-          "read_only": false,
-          "label": "Make immutable"
-        },
-        "mutable_data": {
-          "type": "nested object",
-          "required": true,
-          "read_only": false,
-          "label": "Mutable data",
-          "children": {
-            "description": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Description"
-            },
-            "PO_number_product": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "PO number product"
-            },
-            "season": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Season",
-              "max_length": 20
-            },
-            "year": {
-              "type": "integer",
-              "required": false,
-              "read_only": false,
-              "label": "Year",
-              "min_value": 2018,
-              "max_value": 2027
-            },
-            "parent_company": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Parent company"
-            },
-            "custom": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Custom"
-            },
-            "brand": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Brand"
-            },
-            "brand_description": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Brand description"
-            },
-            "brand_image": {
-              "type": "image upload",
-              "required": false,
-              "read_only": false,
-              "label": "Brand image"
-            },
-            "logo": {
-              "type": "image upload",
-              "required": false,
-              "read_only": false,
-              "label": "Logo"
-            },
-            "segment": {
-              "type": "choice",
-              "required": false,
-              "read_only": false,
-              "label": "Segment",
-              "choices": [
-                {
-                  "value": "mass_market",
-                  "display_name": "Mass Market"
-                },
-                {
-                  "value": "mid_price",
-                  "display_name": "Mid Price"
-                },
-                {
-                  "value": "premium",
-                  "display_name": "Premium"
-                },
-                {
-                  "value": "luxury",
-                  "display_name": "Luxury"
-                }
-              ]
-            },
-            "price_currency": {
-              "type": "choice",
-              "required": false,
-              "read_only": false,
-              "label": "Price currency",
-              "choices": [
-                {
-                  "value": null,
-                  "display_name": "No Selection"
-                },
-                {
-                  "value": "usd",
-                  "display_name": "USD"
-                },
-                {
-                  "value": "eur",
-                  "display_name": "EUR"
-                },
-                {
-                  "value": "gbp",
-                  "display_name": "GBP"
-                }
-              ]
-            },
-            "price": {
-              "type": "float",
-              "required": false,
-              "read_only": false,
-              "label": "Price",
-              "min_value": 0
-            },
-            "strategy_description": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Strategy description"
-            },
-            "services": {
-              "type": "field",
-              "required": false,
-              "read_only": false,
-              "label": "Services",
-              "child": {
-                "type": "nested object",
-                "required": false,
-                "read_only": false,
-                "children": {
-                  "name": {
+    "name": {
+        "type": "string",
+        "required": true,
+        "read_only": false,
+        "label": "Name",
+        "max_length": 120
+    },
+    "company": {
+        "type": "string",
+        "required": true,
+        "read_only": false,
+        "label": "Company",
+        "max_length": 120
+    },
+    "variations": {
+        "type": "field",
+        "required": true,
+        "read_only": false,
+        "label": "Variations",
+        "child": {
+            "type": "nested object",
+            "required": true,
+            "read_only": false,
+            "children": {
+                "name": {
                     "type": "string",
-                    "required": false,
+                    "required": true,
                     "read_only": false,
                     "label": "Name",
                     "max_length": 120
-                  },
-                  "description": {
-                    "type": "string",
-                    "required": false,
-                    "read_only": false,
-                    "label": "Description"
-                  }
-                }
-              }
-            },
-            "care_guide": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Care guide"
-            },
-            "sustainability_statement": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Sustainability statement"
-            },
-            "circular_design_strategies": {
-              "type": "field",
-              "required": false,
-              "read_only": false,
-              "label": "Circular design strategies",
-              "child": {
-                "type": "nested object",
-                "required": false,
-                "read_only": false,
-                "children": {
-                  "circular_design_strategy": {
+                },
+                "template": {
                     "type": "choice",
                     "required": false,
                     "read_only": false,
-                    "label": "Circular design strategy",
+                    "label": "Template",
                     "choices": [
-                      {
-                        "value": "material_cyclability",
-                        "display_name": "Material Cyclability"
-                      },
-                      {
-                        "value": "mono_cycle",
-                        "display_name": "Mono Cycle"
-                      },
-                      {
-                        "value": "disassembly",
-                        "display_name": "Disassembly"
-                      },
-                      {
-                        "value": "longevity",
-                        "display_name": "Longevity"
-                      },
-                      {
-                        "value": "physical_durability",
-                        "display_name": "Physical Durability"
-                      },
-                      {
-                        "value": "aesthetic_durability",
-                        "display_name": "Aesthetic Durability"
-                      },
-                      {
-                        "value": "emotional_durability",
-                        "display_name": "Emotional Durability"
-                      },
-                      {
-                        "value": "repairability",
-                        "display_name": "Repairability"
-                      },
-                      {
-                        "value": "participatory_design",
-                        "display_name": "Participatory Design"
-                      },
-                      {
-                        "value": "modularity",
-                        "display_name": "Modularity"
-                      },
-                      {
-                        "value": "transformability",
-                        "display_name": "Transformability"
-                      },
-                      {
-                        "value": "adjustable_sizing",
-                        "display_name": "Adjustable Sizing"
-                      },
-                      {
-                        "value": "minimal_waste",
-                        "display_name": "Minimal Waste"
-                      }
+                        {
+                            "value": "templates/base.html",
+                            "display_name": "base.html"
+                        },
+                        {
+                            "value": "templates/base-lifecycle.html",
+                            "display_name": "base-lifecycle.html"
+                        }
                     ]
-                  }
-                }
-              }
-            },
-            "care_images": {
-              "type": "field",
-              "required": false,
-              "read_only": false,
-              "label": "Care images",
-              "child": {
-                "type": "nested object",
-                "required": false,
-                "read_only": false,
-                "children": {
-                  "image": {
-                    "type": "image upload",
-                    "required": false,
-                    "read_only": false,
-                    "label": "Image"
-                  }
-                }
-              }
-            },
-            "product_images": {
-              "type": "field",
-              "required": false,
-              "read_only": false,
-              "label": "Product images",
-              "child": {
-                "type": "nested object",
-                "required": false,
-                "read_only": false,
-                "children": {
-                  "image": {
-                    "type": "image upload",
-                    "required": false,
-                    "read_only": false,
-                    "label": "Image"
-                  }
-                }
-              }
-            },
-            "sustainability_guide_image": {
-              "type": "image upload",
-              "required": false,
-              "read_only": false,
-              "label": "Sustainability guide image"
-            }
-          }
-        },
-        "immutable_data": {
-          "type": "nested object",
-          "required": true,
-          "read_only": false,
-          "label": "Immutable data",
-          "children": {
-            "product_name": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Product name",
-              "min_length": 5,
-              "max_length": 150
-            },
-            "sku": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Sku",
-              "min_length": 2,
-              "max_length": 15
-            },
-            "gtin": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Gtin",
-              "max_length": 14
-            },
-            "colourway": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Colourway",
-              "max_length": 20
-            },
-            "product_category": {
-              "type": "choice",
-              "required": false,
-              "read_only": false,
-              "label": "Product category",
-              "choices": [
-                {
-                  "value": "clothing",
-                  "display_name": "Clothing"
                 },
-                {
-                  "value": "accessories",
-                  "display_name": "Accessories"
-                },
-                {
-                  "value": "footwear",
-                  "display_name": "Footwear"
-                },
-                {
-                  "value": "other",
-                  "display_name": "Other"
-                }
-              ]
-            },
-            "product_type": {
-              "type": "choice",
-              "required": false,
-              "read_only": false,
-              "label": "Product type",
-              "choices": [
-                {
-                  "value": "jacket",
-                  "display_name": "Jacket"
-                },
-                {
-                  "value": "pants",
-                  "display_name": "Pants"
-                },
-                {
-                  "value": "blouse",
-                  "display_name": "Blouse"
-                },
-                {
-                  "value": "shirt",
-                  "display_name": "Shirt"
-                },
-                {
-                  "value": "dress",
-                  "display_name": "Dress"
-                },
-                {
-                  "value": "knitwear",
-                  "display_name": "Knitwear"
-                },
-                {
-                  "value": "skirt",
-                  "display_name": "Skirt"
-                },
-                {
-                  "value": "blazer",
-                  "display_name": "Blazer"
-                },
-                {
-                  "value": "denim",
-                  "display_name": "Denim"
-                },
-                {
-                  "value": "accessories",
-                  "display_name": "Accessories"
-                },
-                {
-                  "value": "bags",
-                  "display_name": "Bags"
-                },
-                {
-                  "value": "shoes",
-                  "display_name": "Shoes"
-                },
-                {
-                  "value": "overall",
-                  "display_name": "Overall"
-                },
-                {
-                  "value": "t-shirt",
-                  "display_name": "T-shirt"
-                },
-                {
-                  "value": "top",
-                  "display_name": "Top"
-                },
-                {
-                  "value": "sweater",
-                  "display_name": "Sweater"
-                },
-                {
-                  "value": "other",
-                  "display_name": "Other"
-                }
-              ]
-            },
-            "size_metric": {
-              "type": "choice",
-              "required": false,
-              "read_only": false,
-              "label": "Size metric",
-              "choices": [
-                {
-                  "value": null,
-                  "display_name": "No Selection"
-                },
-                {
-                  "value": "eu",
-                  "display_name": "EU"
-                },
-                {
-                  "value": "fr",
-                  "display_name": "FR"
-                },
-                {
-                  "value": "it",
-                  "display_name": "IT"
-                },
-                {
-                  "value": "uk",
-                  "display_name": "UK"
-                },
-                {
-                  "value": "international",
-                  "display_name": "International"
-                }
-              ]
-            },
-            "size": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Size",
-              "max_length": 10
-            },
-            "weight": {
-              "type": "float",
-              "required": false,
-              "read_only": false,
-              "label": "Weight",
-              "min_value": 0.0001,
-              "max_value": 1000
-            },
-            "weight_unit": {
-              "type": "choice",
-              "required": false,
-              "read_only": false,
-              "label": "Weight unit",
-              "choices": [
-                {
-                  "value": null,
-                  "display_name": "No Selection"
-                },
-                {
-                  "value": "g",
-                  "display_name": "g"
-                },
-                {
-                  "value": "kg",
-                  "display_name": "kg"
-                },
-                {
-                  "value": "oz",
-                  "display_name": "oz"
-                },
-                {
-                  "value": "lb",
-                  "display_name": "lb"
-                }
-              ]
-            },
-            "disassembly_instructions_sorters": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Disassembly instructions sorters"
-            },
-            "disassembly_instructions_user": {
-              "type": "string",
-              "required": false,
-              "read_only": false,
-              "label": "Disassembly instructions user"
-            },
-            "certifications": {
-              "type": "field",
-              "required": false,
-              "read_only": false,
-              "label": "Certifications",
-              "child": {
-                "type": "nested object",
-                "required": false,
-                "read_only": false,
-                "children": {
-                  "certification_type": {
+                "schema_version": {
                     "type": "choice",
                     "required": false,
                     "read_only": false,
-                    "label": "Certification type",
+                    "label": "Schema version",
                     "choices": [
-                      {
-                        "value": "bluesign",
-                        "display_name": "Bluesign"
-                      },
-                      {
-                        "value": "c2c_bronze_cradle_to_cradle",
-                        "display_name": "C2C Bronze (Cradle to Cradle)"
-                      },
-                      {
-                        "value": "eu_ecolabel",
-                        "display_name": "EU Ecolabel"
-                      },
-                      {
-                        "value": "fairtrade",
-                        "display_name": "Fairtrade"
-                      },
-                      {
-                        "value": "gots_global_organic_textile_standard",
-                        "display_name": "GOTS (Global Organic Textile Standard) "
-                      },
-                      {
-                        "value": "grs_global_recycled_standard",
-                        "display_name": "GRS (Global Recycled Standard) "
-                      },
-                      {
-                        "value": "leather_standard_by_oeko_tex®",
-                        "display_name": "LEATHER STANDARD by OEKO-TEX®"
-                      },
-                      {
-                        "value": "oeko_tex_made_in_green",
-                        "display_name": "OEKO-TEX Made In Green"
-                      },
-                      {
-                        "value": "oeko_tex_standard_100",
-                        "display_name": "OEKO-TEX Standard 100"
-                      },
-                      {
-                        "value": "ocs_organic_content_standard",
-                        "display_name": "OCS (Organic Content Standard)"
-                      },
-                      {
-                        "value": "peta",
-                        "display_name": "PETA certified"
-                      },
-                      {
-                        "value": "r.w.s_responsible_wool_standard",
-                        "display_name": "R.W.S (Responsible Wool Standard)"
-                      },
-                      {
-                        "value": "v_label",
-                        "display_name": "V-Label"
-                      }
+                        {
+                            "value": "3",
+                            "display_name": "3"
+                        },
+                        {
+                            "value": "2",
+                            "display_name": "2"
+                        }
                     ]
-                  }
-                }
-              }
-            },
-            "assemblies": {
-              "type": "field",
-              "required": false,
-              "read_only": false,
-              "label": "Assemblies",
-              "child": {
-                "type": "nested object",
-                "required": false,
-                "read_only": false,
-                "children": {
-                  "name": {
-                    "type": "string",
+                },
+                "make_immutable": {
+                    "type": "boolean",
                     "required": false,
                     "read_only": false,
-                    "label": "Name"
-                  },
-                  "materials": {
-                    "type": "field",
+                    "label": "Make immutable"
+                },
+                "mutable_data": {
+                    "type": "nested object",
                     "required": true,
                     "read_only": false,
-                    "label": "Materials",
-                    "child": {
-                      "type": "nested object",
-                      "required": true,
-                      "read_only": false
+                    "label": "Mutable data",
+                    "children": {
+                        "description": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Description"
+                        },
+                        "PO_number_product": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "PO number product"
+                        },
+                        "season": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Season",
+                            "max_length": 20
+                        },
+                        "year": {
+                            "type": "integer",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Year",
+                            "min_value": 2018,
+                            "max_value": 2027
+                        },
+                        "parent_company": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Parent company"
+                        },
+                        "custom": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Custom"
+                        },
+                        "brand": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Brand"
+                        },
+                        "brand_description": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Brand description"
+                        },
+                        "brand_image": {
+                            "type": "image upload",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Brand image"
+                        },
+                        "logo": {
+                            "type": "image upload",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Logo"
+                        },
+                        "production_image": {
+                            "type": "image upload",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Production image"
+                        },
+                        "segment": {
+                            "type": "choice",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Segment",
+                            "choices": [
+                                {
+                                    "value": "mass_market",
+                                    "display_name": "Mass Market"
+                                },
+                                {
+                                    "value": "mid_price",
+                                    "display_name": "Mid Price"
+                                },
+                                {
+                                    "value": "premium",
+                                    "display_name": "Premium"
+                                },
+                                {
+                                    "value": "luxury",
+                                    "display_name": "Luxury"
+                                }
+                            ]
+                        },
+                        "price_currency": {
+                            "type": "choice",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Price currency",
+                            "choices": [
+                                {
+                                    "value": null,
+                                    "display_name": "No Selection"
+                                },
+                                {
+                                    "value": "usd",
+                                    "display_name": "USD"
+                                },
+                                {
+                                    "value": "eur",
+                                    "display_name": "EUR"
+                                },
+                                {
+                                    "value": "gbp",
+                                    "display_name": "GBP"
+                                }
+                            ]
+                        },
+                        "price": {
+                            "type": "float",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Price",
+                            "min_value": 0
+                        },
+                        "strategy_description": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Strategy description"
+                        },
+                        "services": {
+                            "type": "field",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Services",
+                            "child": {
+                                "type": "nested object",
+                                "required": false,
+                                "read_only": false,
+                                "children": {
+                                    "name": {
+                                        "type": "string",
+                                        "required": false,
+                                        "read_only": false,
+                                        "label": "Name",
+                                        "max_length": 120
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "required": false,
+                                        "read_only": false,
+                                        "label": "Description"
+                                    }
+                                }
+                            }
+                        },
+                        "care_guide": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Care guide"
+                        },
+                        "sustainability_statement": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Sustainability statement"
+                        },
+                        "circular_design_strategy": {
+                            "type": "field",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Circular design strategy",
+                            "child": {
+                                "type": "nested object",
+                                "required": false,
+                                "read_only": false,
+                                "children": {
+                                    "circular_design_strategy": {
+                                        "type": "choice",
+                                        "required": false,
+                                        "read_only": false,
+                                        "label": "Circular design strategy",
+                                        "choices": [
+                                            {
+                                                "value": "material_cyclability",
+                                                "display_name": "Material Cyclability"
+                                            },
+                                            {
+                                                "value": "mono_cycle",
+                                                "display_name": "Mono Cycle"
+                                            },
+                                            {
+                                                "value": "disassembly",
+                                                "display_name": "Disassembly"
+                                            },
+                                            {
+                                                "value": "longevity",
+                                                "display_name": "Longevity"
+                                            },
+                                            {
+                                                "value": "physical_durability",
+                                                "display_name": "Physical Durability"
+                                            },
+                                            {
+                                                "value": "aesthetic_durability",
+                                                "display_name": "Aesthetic Durability"
+                                            },
+                                            {
+                                                "value": "emotional_durability",
+                                                "display_name": "Emotional Durability"
+                                            },
+                                            {
+                                                "value": "repairability",
+                                                "display_name": "Repairability"
+                                            },
+                                            {
+                                                "value": "participatory_design",
+                                                "display_name": "Participatory Design"
+                                            },
+                                            {
+                                                "value": "modularity",
+                                                "display_name": "Modularity"
+                                            },
+                                            {
+                                                "value": "transformability",
+                                                "display_name": "Transformability"
+                                            },
+                                            {
+                                                "value": "adjustable_sizing",
+                                                "display_name": "Adjustable Sizing"
+                                            },
+                                            {
+                                                "value": "minimal_waste",
+                                                "display_name": "Minimal Waste"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "care_image": {
+                            "type": "field",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Care image",
+                            "child": {
+                                "type": "nested object",
+                                "required": false,
+                                "read_only": false,
+                                "children": {
+                                    "image_data": {
+                                        "type": "image upload",
+                                        "required": false,
+                                        "read_only": false,
+                                        "label": "Image data"
+                                    }
+                                }
+                            }
+                        },
+                        "product_image": {
+                            "type": "field",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Product image",
+                            "child": {
+                                "type": "nested object",
+                                "required": false,
+                                "read_only": false,
+                                "children": {
+                                    "image_data": {
+                                        "type": "image upload",
+                                        "required": false,
+                                        "read_only": false,
+                                        "label": "Image data"
+                                    }
+                                }
+                            }
+                        },
+                        "sustainability_guide_image": {
+                            "type": "image upload",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Sustainability guide image"
+                        }
                     }
-                  }
-                }
-              }
-            },
-            "product_steps": {
-              "type": "field",
-              "required": false,
-              "read_only": false,
-              "label": "Product steps",
-              "child": {
-                "type": "nested object",
-                "required": false,
-                "read_only": false
-              }
-            },
-            "colours": {
-              "type": "field",
-              "required": false,
-              "read_only": false,
-              "label": "Colours",
-              "child": {
-                "type": "nested object",
-                "required": false,
-                "read_only": false,
-                "children": {
-                  "colour": {
-                    "type": "choice",
-                    "required": false,
+                },
+                "immutable_data": {
+                    "type": "nested object",
+                    "required": true,
                     "read_only": false,
-                    "label": "Colour",
-                    "choices": [
-                      {
-                        "value": "beige",
-                        "display_name": "Beige"
-                      },
-                      {
-                        "value": "black",
-                        "display_name": "Black"
-                      },
-                      {
-                        "value": "black_white",
-                        "display_name": "Black & White"
-                      },
-                      {
-                        "value": "blue",
-                        "display_name": "Blue"
-                      },
-                      {
-                        "value": "burgundy",
-                        "display_name": "Burgundy"
-                      },
-                      {
-                        "value": "brown",
-                        "display_name": "Brown"
-                      },
-                      {
-                        "value": "coral",
-                        "display_name": "Coral"
-                      },
-                      {
-                        "value": "indigo",
-                        "display_name": "Indigo"
-                      },
-                      {
-                        "value": "gold",
-                        "display_name": "Gold"
-                      },
-                      {
-                        "value": "green",
-                        "display_name": "Green"
-                      },
-                      {
-                        "value": "grey",
-                        "display_name": "Grey"
-                      },
-                      {
-                        "value": "khaki",
-                        "display_name": "Khaki"
-                      },
-                      {
-                        "value": "multicoloured",
-                        "display_name": "Multi-coloured"
-                      },
-                      {
-                        "value": "navy",
-                        "display_name": "Navy"
-                      },
-                      {
-                        "value": "nude",
-                        "display_name": "Nude"
-                      },
-                      {
-                        "value": "off-white",
-                        "display_name": "Off-white"
-                      },
-                      {
-                        "value": "orange",
-                        "display_name": "Orange"
-                      },
-                      {
-                        "value": "pink",
-                        "display_name": "Pink"
-                      },
-                      {
-                        "value": "purple",
-                        "display_name": "Purple"
-                      },
-                      {
-                        "value": "red",
-                        "display_name": "Red"
-                      },
-                      {
-                        "value": "rose",
-                        "display_name": "Rose"
-                      },
-                      {
-                        "value": "silver",
-                        "display_name": "Silver"
-                      },
-                      {
-                        "value": "taupe",
-                        "display_name": "Taupe"
-                      },
-                      {
-                        "value": "teal",
-                        "display_name": "Teal"
-                      },
-                      {
-                        "value": "turquoise",
-                        "display_name": "Turquoise"
-                      },
-                      {
-                        "value": "uncoloured",
-                        "display_name": "Uncoloured"
-                      },
-                      {
-                        "value": "other",
-                        "display_name": "Other"
-                      },
-                      {
-                        "value": "white",
-                        "display_name": "White"
-                      },
-                      {
-                        "value": "yellow",
-                        "display_name": "Yellow"
-                      }
-                    ]
-                  }
+                    "label": "Immutable data",
+                    "children": {
+                        "product_name": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Product name",
+                            "min_length": 5,
+                            "max_length": 150
+                        },
+                        "sku": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Sku",
+                            "min_length": 2,
+                            "max_length": 15
+                        },
+                        "gtin": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Gtin",
+                            "max_length": 14
+                        },
+                        "colourway": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Colourway",
+                            "max_length": 20
+                        },
+                        "product_category": {
+                            "type": "choice",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Product category",
+                            "choices": [
+                                {
+                                    "value": "clothing",
+                                    "display_name": "Clothing"
+                                },
+                                {
+                                    "value": "accessories",
+                                    "display_name": "Accessories"
+                                },
+                                {
+                                    "value": "footwear",
+                                    "display_name": "Footwear"
+                                },
+                                {
+                                    "value": "other",
+                                    "display_name": "Other"
+                                }
+                            ]
+                        },
+                        "product_type": {
+                            "type": "choice",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Product type",
+                            "choices": [
+                                {
+                                    "value": "jacket",
+                                    "display_name": "Jacket"
+                                },
+                                {
+                                    "value": "pants",
+                                    "display_name": "Pants"
+                                },
+                                {
+                                    "value": "blouse",
+                                    "display_name": "Blouse"
+                                },
+                                {
+                                    "value": "shirt",
+                                    "display_name": "Shirt"
+                                },
+                                {
+                                    "value": "dress",
+                                    "display_name": "Dress"
+                                },
+                                {
+                                    "value": "knitwear",
+                                    "display_name": "Knitwear"
+                                },
+                                {
+                                    "value": "skirt",
+                                    "display_name": "Skirt"
+                                },
+                                {
+                                    "value": "blazer",
+                                    "display_name": "Blazer"
+                                },
+                                {
+                                    "value": "denim",
+                                    "display_name": "Denim"
+                                },
+                                {
+                                    "value": "accessories",
+                                    "display_name": "Accessories"
+                                },
+                                {
+                                    "value": "bags",
+                                    "display_name": "Bags"
+                                },
+                                {
+                                    "value": "shoes",
+                                    "display_name": "Shoes"
+                                },
+                                {
+                                    "value": "overall",
+                                    "display_name": "Overall"
+                                },
+                                {
+                                    "value": "t-shirt",
+                                    "display_name": "T-shirt"
+                                },
+                                {
+                                    "value": "top",
+                                    "display_name": "Top"
+                                },
+                                {
+                                    "value": "sweater",
+                                    "display_name": "Sweater"
+                                },
+                                {
+                                    "value": "other",
+                                    "display_name": "Other"
+                                }
+                            ]
+                        },
+                        "size_metric": {
+                            "type": "choice",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Size metric",
+                            "choices": [
+                                {
+                                    "value": null,
+                                    "display_name": "No Selection"
+                                },
+                                {
+                                    "value": "eu",
+                                    "display_name": "EU"
+                                },
+                                {
+                                    "value": "fr",
+                                    "display_name": "FR"
+                                },
+                                {
+                                    "value": "it",
+                                    "display_name": "IT"
+                                },
+                                {
+                                    "value": "uk",
+                                    "display_name": "UK"
+                                },
+                                {
+                                    "value": "international",
+                                    "display_name": "International"
+                                }
+                            ]
+                        },
+                        "size": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Size",
+                            "max_length": 10
+                        },
+                        "weight": {
+                            "type": "float",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Weight",
+                            "min_value": 0.0001,
+                            "max_value": 1000
+                        },
+                        "weight_unit": {
+                            "type": "choice",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Weight unit",
+                            "choices": [
+                                {
+                                    "value": null,
+                                    "display_name": "No Selection"
+                                },
+                                {
+                                    "value": "g",
+                                    "display_name": "g"
+                                },
+                                {
+                                    "value": "kg",
+                                    "display_name": "kg"
+                                },
+                                {
+                                    "value": "oz",
+                                    "display_name": "oz"
+                                },
+                                {
+                                    "value": "lb",
+                                    "display_name": "lb"
+                                }
+                            ]
+                        },
+                        "disassembly_instructions_sorters": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Disassembly instructions sorters"
+                        },
+                        "disassembly_instructions_user": {
+                            "type": "string",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Disassembly instructions user"
+                        },
+                        "certification": {
+                            "type": "field",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Certification",
+                            "child": {
+                                "type": "nested object",
+                                "required": false,
+                                "read_only": false,
+                                "children": {
+                                    "certification_type": {
+                                        "type": "choice",
+                                        "required": false,
+                                        "read_only": false,
+                                        "label": "Certification type",
+                                        "choices": [
+                                            {
+                                                "value": "bluesign",
+                                                "display_name": "Bluesign"
+                                            },
+                                            {
+                                                "value": "c2c_bronze_cradle_to_cradle",
+                                                "display_name": "C2C Bronze (Cradle to Cradle)"
+                                            },
+                                            {
+                                                "value": "eu_ecolabel",
+                                                "display_name": "EU Ecolabel"
+                                            },
+                                            {
+                                                "value": "fairtrade",
+                                                "display_name": "Fairtrade"
+                                            },
+                                            {
+                                                "value": "gots_global_organic_textile_standard",
+                                                "display_name": "GOTS (Global Organic Textile Standard) "
+                                            },
+                                            {
+                                                "value": "grs_global_recycled_standard",
+                                                "display_name": "GRS (Global Recycled Standard) "
+                                            },
+                                            {
+                                                "value": "leather_standard_by_oeko_tex®",
+                                                "display_name": "LEATHER STANDARD by OEKO-TEX®"
+                                            },
+                                            {
+                                                "value": "oeko_tex_made_in_green",
+                                                "display_name": "OEKO-TEX Made In Green"
+                                            },
+                                            {
+                                                "value": "oeko_tex_standard_100",
+                                                "display_name": "OEKO-TEX Standard 100"
+                                            },
+                                            {
+                                                "value": "ocs_organic_content_standard",
+                                                "display_name": "OCS (Organic Content Standard)"
+                                            },
+                                            {
+                                                "value": "peta",
+                                                "display_name": "PETA certified"
+                                            },
+                                            {
+                                                "value": "r.w.s_responsible_wool_standard",
+                                                "display_name": "R.W.S (Responsible Wool Standard)"
+                                            },
+                                            {
+                                                "value": "v_label",
+                                                "display_name": "V-Label"
+                                            },
+                                            {
+                                                "value": "biore",
+                                                "display_name": "bioRe®"
+                                            }
+                                        ]
+                                    },
+                                    "file_data": {
+                                        "type": "file upload",
+                                        "required": false,
+                                        "read_only": false,
+                                        "label": "File data"
+                                    }
+                                }
+                            }
+                        },
+                        "assemblies": {
+                            "type": "field",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Assemblies",
+                            "child": {
+                                "type": "nested object",
+                                "required": false,
+                                "read_only": false,
+                                "children": {
+                                    "name": {
+                                        "type": "string",
+                                        "required": false,
+                                        "read_only": false,
+                                        "label": "Name"
+                                    },
+                                    "materials": {
+                                        "type": "field",
+                                        "required": true,
+                                        "read_only": false,
+                                        "label": "Materials",
+                                        "child": {
+                                            "type": "nested object",
+                                            "required": true,
+                                            "read_only": false
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "product_steps": {
+                            "type": "field",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Product steps",
+                            "child": {
+                                "type": "nested object",
+                                "required": false,
+                                "read_only": false
+                            }
+                        },
+                        "colours": {
+                            "type": "field",
+                            "required": false,
+                            "read_only": false,
+                            "label": "Colours",
+                            "child": {
+                                "type": "nested object",
+                                "required": false,
+                                "read_only": false,
+                                "children": {
+                                    "label": {
+                                        "type": "string",
+                                        "required": true,
+                                        "read_only": false,
+                                        "label": "Label",
+                                        "max_length": 32
+                                    },
+                                    "value": {
+                                        "type": "string",
+                                        "required": true,
+                                        "read_only": false,
+                                        "label": "Value",
+                                        "max_length": 16
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
     }
-  }
 }
