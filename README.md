@@ -114,7 +114,7 @@ Generic endpoint, `POST` method.
 POST /<data_type>
 ```
 ### Payload
-A valid json with the data fields
+A valid json with the data fields.
 
 You can see an example, for products, in [product_payload_sample.json](product_payload_sample.json).
 See [product_payload_definition.json](product_payload_definition.json) for the payload format.

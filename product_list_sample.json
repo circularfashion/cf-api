@@ -1,298 +1,784 @@
 [
-  {
-    "id": 1,
-    "name": "TestProduct",
-    "company": "TestCompany",
-    "variations": [
-      {
-        "name": "One Variation",
-        "template": "templates/base.html",
-        "schema_version": "3",
-        "make_immutable": false,
-        "mutable_data": {
-          "description": "This is the one variation of the TestProduct.",
-          "PO_number_product": null,
-          "season": "summer",
-          "year": 2018,
-          "parent_company": null,
-          "custom": null,
-          "brand": "Very Cool Brand",
-          "brand_description": null,
-          "brand_image": null,
-          "logo": null,
-          "segment": "mid_price",
-          "price_currency": "eur",
-          "price": null,
-          "strategy_description": null,
-          "care_guide": null,
-          "sustainability_statement": null,
-          "sustainability_guide_image": null,
-          "product_image":[],
-          "care_image": []
-        },
-        "immutable_data": {
-          "product_name": "Variation 1 of TestProduct",
-          "sku": "4k24j2k3",
-          "gtin": null,
-          "colourway": "So many colours!",
-          "product_category": "other",
-          "product_type": "other",
-          "size_metric": "",
-          "size": "",
-          "weight": 0.8,
-          "weight_unit": "kg",
-          "disassembly_instructions_sorters": "",
-          "disassembly_instructions_user": "Take off the buttons",
-          "assemblies": [
+    {
+        "id": 16,
+        "name": "Product64",
+        "company": "my super company",
+        "variations": [
             {
-              "name": "Shirt",
-              "materials": [
-                {
-                  "id": 4,
-                  "components": [
+                "id": 13,
+                "name": "super new amazing great name",
+                "template": "templates/base.html",
+                "schema_version": "3",
+                "make_immutable": false,
+                "description": "mutable datas var",
+                "PO_number_product": "",
+                "season": null,
+                "year": 2018,
+                "parent_company": "",
+                "custom": "",
+                "brand": "super brand",
+                "brand_description": "",
+                "brand_image": "path/to/my/file.ext",
+                "logo": "path/to/my/file.ext",
+                "production_image": null,
+                "segment": "premium",
+                "price_currency": "eur",
+                "price": 7.0,
+                "strategy_description": "",
+                "care_guide": "",
+                "sustainability_statement": "",
+                "circular_design_strategy": [
                     {
-                      "component_name": "some leather",
-                      "content": "cotton",
-                      "percentage": 100,
-                      "is_recycled": false,
-                      "source_recycled_input": null,
-                      "source_raw_material": null,
-                      "steps": [
-                        {
-                          "country": "NGA",
-                          "company_name": null,
-                          "street": null,
-                          "postal": null,
-                          "city": null,
-                          "oar": null
-                        }
-                      ],
-                      "part": null
+                        "id": 4,
+                        "circular_design_strategy": "repairability"
                     }
-                  ],
-                  "steps": [
+                ],
+                "care_image": [
                     {
-                      "country": "CHN",
-                      "company_name": null,
-                      "street": null,
-                      "postal": null,
-                      "city": null,
-                      "oar": null
+                        "id": 4,
+                        "image_data": "path/to/my/file.ext"
+                    }
+                ],
+                "product_image": [
+                    {
+                        "id": 8,
+                        "image_data": "path/to/my/file.ext"
                     },
                     {
-                      "country": "CHN",
-                      "company_name": null,
-                      "street": null,
-                      "postal": null,
-                      "city": null,
-                      "oar": null,
-                      "dye_stuff": "azo_dye",
-                      "dyeing_process": "yarn_dyed"
+                        "id": 9,
+                        "image_data": "path/to/my/file.ext"
                     }
-                  ],
-                  "thumbnail": null,
-                  "colours": [],
-                  "technical_data_sheet": null,
-                  "chemical_compliance": [],
-                  "name": "TestMaterial",
-                  "article_number": "222",
-                  "description": "Testing the Serializer",
-                  "consumption": null,
-                  "consumption_unit": null,
-                  "water_properties": null,
-                  "water_resistance_test_report": null,
-                  "material_properties_other": null,
-                  "category": "fabric",
-                  "pattern_type": null,
-                  "material_type": null,
-                  "staple_fibre_length": null,
-                  "width": null,
-                  "elasticity_diagonal": null,
-                  "elasticity_2_way_stretch": null,
-                  "elasticity_4_way_stretch": null,
-                  "weight": null,
-                  "material_properties": [],
-                  "polymorphic_ctype": {
-                    "id": 3,
-                    "app_label": "dragons",
-                    "model": "fabricv300"
-                  }
-                },
-                {
-                  "id": 5,
-                  "components": [
+                ],
+                "sustainability_guide_image": "path/to/my/file.ext",
+                "product_name": "immutable-superdata",
+                "sku": "sku01",
+                "gtin": "43434343",
+                "colourway": "red",
+                "product_category": "accessories",
+                "product_type": "shoes",
+                "size_metric": "eu",
+                "size": "1m",
+                "weight": 4.0,
+                "weight_unit": "kg",
+                "disassembly_instructions_sorters": "Remove every metallic part",
+                "disassembly_instructions_user": "empty pockets",
+                "certification": [
                     {
-                      "component_name": "some leather",
-                      "content": "cotton",
-                      "percentage": 100,
-                      "is_recycled": false,
-                      "source_recycled_input": null,
-                      "source_raw_material": null,
-                      "steps": [
-                        {
-                          "country": "NGA",
-                          "company_name": null,
-                          "street": null,
-                          "postal": null,
-                          "city": null,
-                          "oar": null
-                        }
-                      ],
-                      "part": null
-                    }
-                  ],
-                  "steps": [
-                    {
-                      "country": "CHN",
-                      "company_name": null,
-                      "street": null,
-                      "postal": null,
-                      "city": null,
-                      "oar": null
+                        "id": 11,
+                        "certification_type": "eu_ecolabel",
+                        "file_data": "path/to/my/file.ext"
                     },
                     {
-                      "country": "CHN",
-                      "company_name": null,
-                      "street": null,
-                      "postal": null,
-                      "city": null,
-                      "oar": null,
-                      "dye_stuff": "azo_dye",
-                      "dyeing_process": "yarn_dyed"
+                        "id": 12,
+                        "certification_type": "grs_global_recycled_standard",
+                        "file_data": "path/to/my/file.ext"
                     }
-                  ],
-                  "thumbnail": null,
-                  "colours": [],
-                  "technical_data_sheet": null,
-                  "chemical_compliance": [],
-                  "name": "TestMaterial",
-                  "article_number": "222",
-                  "description": "Testing the Serializer",
-                  "consumption": null,
-                  "consumption_unit": null,
-                  "water_properties": null,
-                  "water_resistance_test_report": null,
-                  "material_properties_other": null,
-                  "category": "fabric",
-                  "pattern_type": null,
-                  "material_type": null,
-                  "staple_fibre_length": null,
-                  "width": null,
-                  "elasticity_diagonal": null,
-                  "elasticity_2_way_stretch": null,
-                  "elasticity_4_way_stretch": null,
-                  "weight": null,
-                  "material_properties": [],
-                  "polymorphic_ctype": {
-                    "id": 3,
-                    "app_label": "dragons",
-                    "model": "fabricv300"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "Buttons",
-              "materials": [
-                {
-                  "id": 6,
-                  "components": [],
-                  "steps": [
+                ],
+                "assemblies": [
                     {
-                      "country": "CHN",
-                      "company_name": null,
-                      "street": null,
-                      "postal": null,
-                      "city": null,
-                      "oar": null
+                        "id": 9,
+                        "name": "assembly1",
+                        "materials": [
+                            {
+                                "id": 12,
+                                "components": [],
+                                "steps": [],
+                                "thumbnail": "path/to/my/file.ext",
+                                "technical_data_sheet": null,
+                                "water_resistance_test_report": null,
+                                "chemical_compliance": [],
+                                "biodegradability_certification": [],
+                                "social_environmental_certification": [],
+                                "material_safety_data_sheet": [],
+                                "colours": [],
+                                "name": "fat_brand_material_1",
+                                "article_number": "200",
+                                "description": "",
+                                "consumption": null,
+                                "consumption_unit": null,
+                                "water_properties": null,
+                                "material_properties_other": null,
+                                "category": "fabric",
+                                "pattern_type": "abstract",
+                                "material_type": null,
+                                "staple_fibre_length": null,
+                                "width": null,
+                                "elasticity_diagonal": true,
+                                "elasticity_2_way_stretch": null,
+                                "elasticity_4_way_stretch": false,
+                                "weight": null,
+                                "material_properties": [
+                                    "breathable",
+                                    "light-weight"
+                                ]
+                            },
+                            {
+                                "id": 13,
+                                "components": [
+                                    {
+                                        "id": 7,
+                                        "component_name": "compo1",
+                                        "content": "coconut",
+                                        "percentage": 95.0,
+                                        "is_recycled": true,
+                                        "source_recycled_input": "good coconut",
+                                        "source_raw_material": "raw coconut",
+                                        "steps": [
+                                            {
+                                                "id": 34,
+                                                "country": "SGP",
+                                                "company_name": "coconut company",
+                                                "street": null,
+                                                "postal": null,
+                                                "city": null,
+                                                "oar": null
+                                            }
+                                        ],
+                                        "part": "coconut skin"
+                                    }
+                                ],
+                                "steps": [
+                                    {
+                                        "id": 35,
+                                        "step_type": "production",
+                                        "country": "CYM",
+                                        "company_name": "coconut producer",
+                                        "street": null,
+                                        "postal": null,
+                                        "city": null,
+                                        "oar": null
+                                    },
+                                    {
+                                        "id": 38,
+                                        "step_type": "printing",
+                                        "country": "AND",
+                                        "company_name": "coco print",
+                                        "street": null,
+                                        "postal": null,
+                                        "city": null,
+                                        "oar": null,
+                                        "print_stuff": "applying coconut on garment",
+                                        "printing_process": "digital_printed"
+                                    },
+                                    {
+                                        "id": 39,
+                                        "step_type": "finishing",
+                                        "country": "BLR",
+                                        "company_name": "coconut finisher",
+                                        "street": null,
+                                        "postal": null,
+                                        "city": null,
+                                        "oar": null,
+                                        "material_finishing": "antibacterial_finishing"
+                                    }
+                                ],
+                                "thumbnail": "path/to/my/file.ext",
+                                "technical_data_sheet": "path/to/my/file.ext",
+                                "water_resistance_test_report": "path/to/my/file.ext",
+                                "chemical_compliance": [
+                                    {
+                                        "id": 6,
+                                        "chemical_compliance": "global_recycling_standard",
+                                        "other_chemical_compliance": null
+                                    }
+                                ],
+                                "biodegradability_certification": [
+                                    {
+                                        "id": 5,
+                                        "certification": "din_en_iso_9408",
+                                        "file_data": "path/to/my/file.ext"
+                                    }
+                                ],
+                                "social_environmental_certification": [
+                                    {
+                                        "id": 6,
+                                        "certification": "international_labour_organization",
+                                        "file_data": null
+                                    }
+                                ],
+                                "material_safety_data_sheet": [
+                                    {
+                                        "id": 6,
+                                        "certification": "msds_finishing",
+                                        "file_data": "path/to/my/file.ext"
+                                    }
+                                ],
+                                "colours": [
+                                    {
+                                        "label": "Green",
+                                        "value": "green"
+                                    },
+                                    {
+                                        "label": "Blue",
+                                        "value": "blue"
+                                    }
+                                ],
+                                "name": "yarn1",
+                                "article_number": "12342",
+                                "description": "super yarn",
+                                "consumption": 5.0,
+                                "consumption_unit": "sqft",
+                                "water_properties": "water_repellent",
+                                "material_properties_other": "puppy",
+                                "category": "yarn",
+                                "pattern_type": null,
+                                "material_type": "crimped",
+                                "staple_fibre_length": 5.0,
+                                "material_properties": [
+                                    "fluffy",
+                                    "insulating",
+                                    "robust"
+                                ],
+                                "applications": [
+                                    "embroidery_thread",
+                                    "weaving_yarn",
+                                    "overlock_thread"
+                                ],
+                                "applications_other": "can be used as towel"
+                            }
+                        ]
                     }
-                  ],
-                  "thumbnail": null,
-                  "colours": [],
-                  "technical_data_sheet": null,
-                  "chemical_compliance": [],
-                  "name": "TestTrim",
-                  "article_number": null,
-                  "description": "Testing the Serializer",
-                  "consumption": null,
-                  "consumption_unit": null,
-                  "water_properties": null,
-                  "water_resistance_test_report": null,
-                  "material_properties_other": null,
-                  "category": "trim",
-                  "pattern_type": null,
-                  "material_type": null,
-                  "width": null,
-                  "elasticity_diagonal": null,
-                  "elasticity_2_way_stretch": null,
-                  "elasticity_4_way_stretch": null,
-                  "weight": null,
-                  "material_properties": [],
-                  "polymorphic_ctype": {
-                    "id": 2,
-                    "app_label": "dragons",
-                    "model": "trimv300"
-                  }
-                }
-              ]
+                ],
+                "product_steps": [],
+                "colours": [
+                    {
+                        "label": "Red",
+                        "value": "red"
+                    },
+                    {
+                        "label": "Green",
+                        "value": "green"
+                    },
+                    {
+                        "label": "Blue",
+                        "value": "blue"
+                    }
+                ]
+            },
+            {
+                "id": 42,
+                "name": "One Variation",
+                "template": "templates/base.html",
+                "schema_version": "3",
+                "make_immutable": false,
+                "description": "Amazing variation",
+                "PO_number_product": null,
+                "season": null,
+                "year": 2018,
+                "parent_company": null,
+                "custom": null,
+                "brand": null,
+                "brand_description": null,
+                "brand_image": null,
+                "logo": null,
+                "production_image": null,
+                "segment": null,
+                "price_currency": null,
+                "price": null,
+                "strategy_description": null,
+                "care_guide": null,
+                "sustainability_statement": null,
+                "circular_design_strategy": [
+                    {
+                        "id": 15,
+                        "circular_design_strategy": "disassembly"
+                    },
+                    {
+                        "id": 16,
+                        "circular_design_strategy": "longevity"
+                    }
+                ],
+                "care_image": [],
+                "product_image": [],
+                "sustainability_guide_image": null,
+                "product_name": "Variation 1 of TestProduct",
+                "sku": "4k24j2k9",
+                "gtin": null,
+                "colourway": null,
+                "product_category": "other",
+                "product_type": "other",
+                "size_metric": null,
+                "size": null,
+                "weight": null,
+                "weight_unit": null,
+                "disassembly_instructions_sorters": "",
+                "disassembly_instructions_user": "",
+                "certification": [
+                    {
+                        "id": 31,
+                        "certification_type": "bluesign",
+                        "file_data": null
+                    },
+                    {
+                        "id": 32,
+                        "certification_type": "fairtrade",
+                        "file_data": null
+                    }
+                ],
+                "assemblies": [],
+                "product_steps": [
+                    {
+                        "id": 111,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "embossing",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 112,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "antistatic",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 113,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "unknown",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 114,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "print_stuff": "unknown",
+                        "printing_process": "unknown",
+                        "step_type": "printing"
+                    },
+                    {
+                        "id": 115,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "print_stuff": "use HP printer",
+                        "printing_process": "best process",
+                        "step_type": "printing"
+                    }
+                ],
+                "colours": [
+                    {
+                        "label": "Green",
+                        "value": "green"
+                    },
+                    {
+                        "label": "Blue",
+                        "value": "blue"
+                    }
+                ]
+            },
+            {
+                "id": 43,
+                "name": "One Variation",
+                "template": "templates/base.html",
+                "schema_version": "3",
+                "make_immutable": false,
+                "description": "Amazing variation",
+                "PO_number_product": null,
+                "season": null,
+                "year": 2018,
+                "parent_company": null,
+                "custom": null,
+                "brand": null,
+                "brand_description": null,
+                "brand_image": null,
+                "logo": null,
+                "production_image": null,
+                "segment": null,
+                "price_currency": null,
+                "price": null,
+                "strategy_description": null,
+                "care_guide": null,
+                "sustainability_statement": null,
+                "circular_design_strategy": [
+                    {
+                        "id": 17,
+                        "circular_design_strategy": "disassembly"
+                    },
+                    {
+                        "id": 18,
+                        "circular_design_strategy": "longevity"
+                    }
+                ],
+                "care_image": [],
+                "product_image": [],
+                "sustainability_guide_image": null,
+                "product_name": "Variation 1 of TestProduct",
+                "sku": "4k24j2k9",
+                "gtin": null,
+                "colourway": null,
+                "product_category": "other",
+                "product_type": "other",
+                "size_metric": null,
+                "size": null,
+                "weight": null,
+                "weight_unit": null,
+                "disassembly_instructions_sorters": "",
+                "disassembly_instructions_user": "",
+                "certification": [
+                    {
+                        "id": 33,
+                        "certification_type": "bluesign",
+                        "file_data": null
+                    },
+                    {
+                        "id": 34,
+                        "certification_type": "fairtrade",
+                        "file_data": null
+                    }
+                ],
+                "assemblies": [],
+                "product_steps": [
+                    {
+                        "id": 116,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "embossing",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 117,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "antistatic",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 118,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "unknown",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 119,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "print_stuff": "unknown",
+                        "printing_process": "unknown",
+                        "step_type": "printing"
+                    },
+                    {
+                        "id": 120,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "print_stuff": "use HP printer",
+                        "printing_process": "best process",
+                        "step_type": "printing"
+                    }
+                ],
+                "colours": [
+                    {
+                        "label": "Green",
+                        "value": "green"
+                    },
+                    {
+                        "label": "Blue",
+                        "value": "blue"
+                    }
+                ]
+            },
+            {
+                "id": 44,
+                "name": "One Variation",
+                "template": "templates/base.html",
+                "schema_version": "3",
+                "make_immutable": false,
+                "description": "Amazing variation",
+                "PO_number_product": null,
+                "season": null,
+                "year": 2018,
+                "parent_company": null,
+                "custom": null,
+                "brand": null,
+                "brand_description": null,
+                "brand_image": null,
+                "logo": null,
+                "production_image": null,
+                "segment": null,
+                "price_currency": null,
+                "price": null,
+                "strategy_description": null,
+                "care_guide": null,
+                "sustainability_statement": null,
+                "circular_design_strategy": [
+                    {
+                        "id": 19,
+                        "circular_design_strategy": "disassembly"
+                    },
+                    {
+                        "id": 20,
+                        "circular_design_strategy": "longevity"
+                    }
+                ],
+                "care_image": [],
+                "product_image": [],
+                "sustainability_guide_image": null,
+                "product_name": "Variation 1 of TestProduct",
+                "sku": "4k24j2k9",
+                "gtin": null,
+                "colourway": null,
+                "product_category": "other",
+                "product_type": "other",
+                "size_metric": null,
+                "size": null,
+                "weight": null,
+                "weight_unit": null,
+                "disassembly_instructions_sorters": "",
+                "disassembly_instructions_user": "",
+                "certification": [
+                    {
+                        "id": 35,
+                        "certification_type": "bluesign",
+                        "file_data": "path/to/my/file.ext"
+                    },
+                    {
+                        "id": 36,
+                        "certification_type": "fairtrade",
+                        "file_data": null
+                    }
+                ],
+                "assemblies": [],
+                "product_steps": [
+                    {
+                        "id": 121,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "embossing",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 122,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "antistatic",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 123,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "unknown",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 124,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "print_stuff": "unknown",
+                        "printing_process": "unknown",
+                        "step_type": "printing"
+                    },
+                    {
+                        "id": 125,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "print_stuff": "use HP printer",
+                        "printing_process": "best process",
+                        "step_type": "printing"
+                    }
+                ],
+                "colours": [
+                    {
+                        "label": "Green",
+                        "value": "green"
+                    },
+                    {
+                        "label": "Blue",
+                        "value": "blue"
+                    }
+                ]
+            },
+            {
+                "id": 45,
+                "name": "One Variation",
+                "template": "templates/base.html",
+                "schema_version": "3",
+                "make_immutable": false,
+                "description": "Amazing variation",
+                "PO_number_product": null,
+                "season": null,
+                "year": 2018,
+                "parent_company": null,
+                "custom": null,
+                "brand": null,
+                "brand_description": null,
+                "brand_image": null,
+                "logo": null,
+                "production_image": null,
+                "segment": null,
+                "price_currency": null,
+                "price": null,
+                "strategy_description": null,
+                "care_guide": null,
+                "sustainability_statement": null,
+                "circular_design_strategy": [
+                    {
+                        "id": 21,
+                        "circular_design_strategy": "disassembly"
+                    },
+                    {
+                        "id": 22,
+                        "circular_design_strategy": "longevity"
+                    }
+                ],
+                "care_image": [],
+                "product_image": [],
+                "sustainability_guide_image": null,
+                "product_name": "Variation 1 of TestProduct",
+                "sku": "4k24j2k9",
+                "gtin": null,
+                "colourway": null,
+                "product_category": "other",
+                "product_type": "other",
+                "size_metric": null,
+                "size": null,
+                "weight": null,
+                "weight_unit": null,
+                "disassembly_instructions_sorters": "",
+                "disassembly_instructions_user": "",
+                "certification": [
+                    {
+                        "id": 37,
+                        "certification_type": "bluesign",
+                        "file_data": "path/to/my/file.ext"
+                    },
+                    {
+                        "id": 38,
+                        "certification_type": "fairtrade",
+                        "file_data": null
+                    }
+                ],
+                "assemblies": [],
+                "product_steps": [
+                    {
+                        "id": 126,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "embossing",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 127,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "antistatic",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 128,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "product_finishing": "unknown",
+                        "step_type": "finishing"
+                    },
+                    {
+                        "id": 129,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "print_stuff": "unknown",
+                        "printing_process": "unknown",
+                        "step_type": "printing"
+                    },
+                    {
+                        "id": 130,
+                        "country": "FRA",
+                        "company_name": null,
+                        "street": null,
+                        "postal": null,
+                        "city": null,
+                        "oar": null,
+                        "print_stuff": "use HP printer",
+                        "printing_process": "best process",
+                        "step_type": "printing"
+                    }
+                ],
+                "colours": [
+                    {
+                        "label": "Green",
+                        "value": "green"
+                    },
+                    {
+                        "label": "Blue",
+                        "value": "blue"
+                    }
+                ]
             }
-          ],
-          "product_steps": [
-            {
-              "country": "DEU",
-              "company_name": null,
-              "street": null,
-              "postal": null,
-              "city": null,
-              "oar": null,
-              "dye_stuff": "beetroot",
-              "dyeing_process": "dip-dye",
-              "step_type": "dyeing"
-            },
-            {
-              "country": "DEU",
-              "company_name": "Waschmaschine",
-              "street": "Kaiserstra\\u00dfe",
-              "postal": null,
-              "city": null,
-              "oar": null,
-              "step_type": "laundry"
-            },
-            {
-              "country": "DEU",
-              "company_name": "Waschmaschine",
-              "street": "Kaiserstra\\u00dfe",
-              "postal": null,
-              "city": null,
-              "oar": null,
-              "product_finishing": "enzyme_washing",
-              "step_type": "finishing"
-            },
-            {
-              "country": "NLD",
-              "company_name": null,
-              "street": null,
-              "postal": null,
-              "city": null,
-              "oar": null,
-              "print_stuff": "something",
-              "printing_process": "Direct Printed",
-              "step_type": "printing"
-            }
-          ],
-          "colours": [
-            {
-              "colour": "green"
-            },
-            {
-              "colour": "blue"
-            },
-            {
-              "colour": "yellow"
-            }
-          ]
-        }
-      }
-    ]
-  }
+        ]
+    }
 ]
