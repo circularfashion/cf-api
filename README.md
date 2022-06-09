@@ -2,14 +2,45 @@
 circular.fashion's API for creating Products. Please contact us at <?> to set up your account be API enabled.
 Once the API for your account is enabled, you can use the instructions below to create Products.
 
+# Overview
+
+* [API Root](#-api-root)
+* [Authentication](#-authentication)
+* [Request Types](#-request-types)
+* [Response Types](#-response-types)
+* [List of Endpoints](#list-of-endpoints)
+
 # API Root
 ```
-https://app.circular.fashion/api
+https://app.circular.fashion/circularity-id/api/0/data/3/
 ```
 # Authentication
-Obtain an API key at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
+The API key model is specific for the circularity id APIs and directly linked to a company. 
 
-The API key is on a company basis, not on a user basis.
+API keys cannot be deleted as such but are rather revoked. 
+
+The keys are specific for circularity id. This allows for separation of concerns when other APIs will be published.
+
+## Obtain an API key
+Obtain an API key at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
+Alternatively, use the API to create an API key: 
+```
+POST /users/api/v1/api-key/
+```
+This key can only be viewed once.
+The API key is generated for the company of the requesting user and returned in a JSON with status code 200:
+`{"generated_key": <key>}` On authentication failure a 403 is returned.
+
+
+
+If already a key exists for the company, a new one will be created. The old one will be revoked and can no longer be used. 
+
+Please note that the API key is on a **company basis**, not on a user basis.
+
+## Revoke API key
+```
+
+```
 
 ## Verify an API Key
 ```
@@ -36,7 +67,7 @@ When sending a messages to any endpoint, the `header` must contain `Authorizatio
 Content-Type: application/json
 Authorization: Api-Key <key>
 ```
-# Endpoints
+# Request Types
 ## Create
 ```
 POST /products
@@ -74,3 +105,7 @@ DELETE /products/<product_id>
 ```
 ### Response
 If successful, the API will send an HTTP response `204`.
+
+# Response Types
+
+# List of Endpoints
