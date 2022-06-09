@@ -13,7 +13,12 @@ Once the API for your account is enabled, you can use the instructions below to 
 * [List of Endpoints](#list-of-endpoints)
 
 # API Root
-All endpoints to the API start with the following URL:
+All endpoints to the API start with a URL like:
+```
+https://app.circular.fashion/circularity_id/api/v<api_version>/data/v<data_version>
+```
+
+Currently, the only API available is version 0, with the data version 3 so the start of the API uris will be:
 ```
 https://app.circular.fashion/circularity_id/api/v0/data/v3
 ```
@@ -24,13 +29,6 @@ The API key model is specific for the circularity id APIs and directly linked to
 API keys cannot be deleted as such but are rather revoked. 
 
 The keys are specific for circularity id. This allows for separation of concerns when other APIs will be published.
-
-## Use the API key
-When sending a messages to any endpoint, the `HTTP header` must contain `Authorization: Api-Key <key>`:
-```
-Content-Type: application/json
-Authorization: Api-Key <key>
-```
 
 ## Obtain an API key
 Obtain an API key at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
@@ -46,6 +44,13 @@ The API key is generated for the company of the requesting user and returned in 
 If a key already exists for the company, a new one will be created. The old one will be revoked and can no longer be used.
 
 > Please note that the API key is on a **company basis**, not on a user basis.
+
+## Use the API key
+When sending a request to any endpoint, the `HTTP header` must contain `Authorization: Api-Key <key>`:
+```
+Content-Type: application/json
+Authorization: Api-Key <key>
+```
 
 ## Revoke API key
 ```
@@ -63,16 +68,16 @@ On authentication failure a `403` is returned.
 GET /users/api/v1/api-key/test/
 ```
 ### Response
-If the key is valid, you will receive an JSON object:
+If the key is valid, a JSON object is received:
 ```
 {"success": true}
 ```
-Otherwise, you will receive an JSON object:
+Otherwise, the JSON object will look like:
 ```
 {"success": false}
 ```
 
-It can also return a response code `403`.
+It can also return a response code `403` in case of error.
 
 # Request Types
 ## Create
