@@ -1,54 +1,66 @@
 # cf-api
-circular.fashion's API for creating Products. Please contact us at <?> to set up your account be API enabled.
-Once the API for your account is enabled, you can use the instructions below to create Products.
+circular.fashion's API for creating, reading, updating and deleting Products.
+
+Please contact us at <?> to set up your account be API enabled.
+Once the API for your account is enabled, you can use the instructions below to handle Products.
 
 # Overview
 
-* [API Root](#-api-root)
-* [Authentication](#-authentication)
-* [Request Types](#-request-types)
-* [Response Types](#-response-types)
+* [API Root](#api-root)
+* [Authentication](#authentication)
+* [Request Types](#request-types)
+* [Response Types](#response-types)
 * [List of Endpoints](#list-of-endpoints)
 
 # API Root
+All endpoints to the API start with the following URL:
 ```
-https://app.circular.fashion/circularity-id/api/0/data/3/
+https://app.circular.fashion/circularity_id/api/v0/data/v3
 ```
-# Authentication
+
+# Authentication and API key management
 The API key model is specific for the circularity id APIs and directly linked to a company. 
 
 API keys cannot be deleted as such but are rather revoked. 
 
 The keys are specific for circularity id. This allows for separation of concerns when other APIs will be published.
 
+## Use the API key
+When sending a messages to any endpoint, the `HTTP header` must contain `Authorization: Api-Key <key>`:
+```
+Content-Type: application/json
+Authorization: Api-Key <key>
+```
+
 ## Obtain an API key
 Obtain an API key at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
-Alternatively, use the API to create an API key: 
+Alternatively, you can use the API to create an API key:
 ```
 POST /users/api/v1/api-key/
 ```
-This key can only be viewed once.
+This key can only be viewed **once**.
+
 The API key is generated for the company of the requesting user and returned in a JSON with status code 200:
-`{"generated_key": <key>}` On authentication failure a 403 is returned.
+`{"generated_key": <key>}` On authentication failure a `403` error is returned.
 
+If a key already exists for the company, a new one will be created. The old one will be revoked and can no longer be used.
 
-
-If already a key exists for the company, a new one will be created. The old one will be revoked and can no longer be used. 
-
-Please note that the API key is on a **company basis**, not on a user basis.
+> Please note that the API key is on a **company basis**, not on a user basis.
 
 ## Revoke API key
 ```
-
+DELETE /users/api/v1/api-key/
 ```
+### Response
+If an API key exists, it will be revoked. If no API key exists, this information will not be disclosed to the user.
+
+It returns a JSON with status `200`: `{"success": true}`
+
+On authentication failure a `403` is returned.
 
 ## Verify an API Key
 ```
-POST /users/api/v1/api-key/test/
-```
-### Payload
-```
-None
+GET /users/api/v1/api-key/test/
 ```
 ### Response
 If the key is valid, you will receive an JSON object:
@@ -60,13 +72,8 @@ Otherwise, you will receive an JSON object:
 {"success": false}
 ```
 
-or an response code 403
-## Using the access token
-When sending a messages to any endpoint, the `header` must contain `Authorization: Api-Key <key>`:
-```
-Content-Type: application/json
-Authorization: Api-Key <key>
-```
+It can also return a response code `403`.
+
 # Request Types
 ## Create
 ```
