@@ -1,8 +1,10 @@
 # cf-api
 circular.fashion's API for creating, reading, updating and deleting Products.
 
-Please contact us at <?> to set up your account be API enabled.
+Please contact us at info@circular.fashion to set up your account be API enabled.
 Once the API for your account is enabled, you can use the instructions below to handle Products.
+
+You can also contact us at develop@circular.fashion if you have any questions or feedback regarding the API.
 
 # Overview
 
@@ -23,6 +25,8 @@ Currently, the only API available is version 0, with the data version 3 so the s
 https://app.circular.fashion/circularity_id/api/v0/data/v3
 ```
 
+> **Disclaimer**: This first version is not made to stay and may be deprecated at some point.
+
 # Authentication and API key management
 The API key model is specific for the circularity id APIs and directly linked to a company. 
 
@@ -36,7 +40,7 @@ Alternatively, you can use the API to create an API key:
 ```
 POST /users/api/v1/api-key/
 ```
-This key can only be viewed **once**.
+This key can only be viewed **once**. _We will not save your API key in your profile._
 
 The API key is generated for the company of the requesting user and returned in a JSON with status code 200:
 `{"generated_key": <key>}` On authentication failure a `403` error is returned.
@@ -116,11 +120,13 @@ POST /<data_type>
 ### Payload
 A valid json with the data fields.
 
-You can see an example, for products, in [product_payload_sample.json](product_payload_sample.json).
+You can see an example for products in [product_payload_sample.json](product_payload_sample.json).  
 See [product_payload_definition.json](product_payload_definition.json) for the payload format.
 
 - `base64_image_file` needs to be replaced by a base64 encoding, smaller than 5MB, of an image file ("jpeg", "jpg" or "png").
 - `base64_pdf_file` needs to be replaced by a base64 encoding, smaller than 5MB, of a file ("pdf", "jpeg", "jpg or "png").
+
+> NB: It is possible to convert a file to base64 using many tools like websites, the python `base64` library, ...
 
 ### Response
 If successful, the API will send an HTTP response `201`.
