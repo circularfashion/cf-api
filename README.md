@@ -1,7 +1,7 @@
 # cf-api
 circular.fashion's API for creating, reading, updating and deleting Products.
 
-Please contact us at info@circular.fashion to set up your account be API enabled.
+Please contact us at info@circular.fashion to set up your account to have the API enabled.
 Once the API for your account is enabled, you can use the instructions below to handle Products.
 
 You can also contact us at develop@circular.fashion if you have any questions or feedback regarding the API.
@@ -9,9 +9,8 @@ You can also contact us at develop@circular.fashion if you have any questions or
 # Overview
 
 * [API Root](#api-root)
-* [Authentication](#authentication)
+* [Authentication and API Key Management](#authentication-and-api-key-management)
 * [Request Types](#request-types)
-* [Response Types](#response-types)
 * [List of Endpoints](#list-of-endpoints)
 
 # API Root
@@ -20,17 +19,17 @@ All endpoints to the API start with a URL like:
 https://app.circular.fashion/circularity_id/api/v<api_version>/data/v<data_version>
 ```
 
-Currently, the only API available is version 0, with the data version 3 so the start of the API uris will be:
+Currently, the only API available is version 0, with the data version 3 so the start of the API uris look like this:
 ```
 https://app.circular.fashion/circularity_id/api/v0/data/v3
 ```
 
-> **Disclaimer**: This first version is not made to stay and may be deprecated at some point.
+> **Disclaimer**: This first version is not made to stay and may be deprecated at some point in time.
 
 # Authentication and API key management
-The API key model is specific for the circularity id APIs and directly linked to a company. 
+The API key model is specific for the circularity.id APIs and directly linked to a company. 
 
-API keys cannot be deleted as such but are rather revoked. 
+API keys cannot be deleted as such but can rather be revoked. 
 
 The keys are specific for circularity id. This allows for separation of concerns when other APIs will be published.
 
@@ -123,10 +122,10 @@ A valid json with the data fields.
 You can see an example for products in [product_payload_sample.json](product_payload_sample.json).  
 See [product_payload_definition.json](product_payload_definition.json) for the payload format.
 
-- `base64_image_file` needs to be replaced by a base64 encoding, smaller than 5MB, of an image file ("jpeg", "jpg" or "png").
-- `base64_pdf_file` needs to be replaced by a base64 encoding, smaller than 5MB, of a file ("pdf", "jpeg", "jpg or "png").
+- `base64_image_file`: replace by a base64 encoded image file, smaller than 5MB ("jpeg", "jpg" or "png").
+- `base64_pdf_file`: replace by a base64 encoded file, smaller than 5MB ("pdf", "jpeg", "jpg or "png").
 
-> NB: It is possible to convert a file to base64 using many tools like websites, the python `base64` library, ...
+> Tip: It is possible to convert a file to base64 using many tools like websites, the python `base64` library, ...
 
 ### Response
 If successful, the API will send an HTTP response `201`.
@@ -148,7 +147,7 @@ Generic endpoint, `GET` method.
 GET /<data_type>
 ```
 ### Response
-The response is an array of all data instance of `data_type` owned by the user's company.
+The response is an array of all data instances of `data_type` owned by the user's company.
 
 See [product_list_sample.json](product_list_sample.json) for an example on what could be returned
 
@@ -159,7 +158,7 @@ GET /<data_type>/<data_id>
 ```
 ### Response
 If successful, `200` code and the corresponding data for the given id is returned.
-If not, returns a `404` error code.
+Otherwise, a `404` error code is returned.
 
 ## Delete
 Specific endpoint, `DELETE` method.
@@ -170,25 +169,26 @@ DELETE /<data_type>/<data_id>
 If successful, the API will send an HTTP response `204`.
 
 ##  Update
-Specific endpoint, `DELETE` method.
+Specific endpoint, `PATCH` method.
 ```
 PATCH /<data_type>/<data_id>
 ```
 ### Payload
-JSON with the data fields that we want to update
-For instance, to update the product name
+JSON with the data fields we want to update.
+For instance, updating the product name:
 ```
 {
     "name": "New name"
 }
 ```
 
-> It is **not** possible to edit a child data through its parent endpoint. The direct endpoint for this needs to be used (eg, to update a variation name, go to `/products/<product_id>/variations/<variation_id>`).
-> An exception is made on colours.
+> It is **not** possible to edit a child data through its parent endpoint. The direct endpoint for this needs to be used (e.g., to update a variation name, use `/products/<product_id>/variations/<variation_id>`).
+> 
+> An exception is made on colours, as we're not really creating or updating existing colours but assigning existing colours to elements.
 
 ### Response
 If successful, `200` code and the updated data is returned.
-If not, should return a `400` error with information on what happened.
+Else, a `400` error with information on what happened is returned.
 
 # List of Endpoints
 
