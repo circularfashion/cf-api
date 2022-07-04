@@ -33,31 +33,39 @@ API keys cannot be deleted as such but can rather be revoked.
 
 The keys are specific for circularity id. This allows for separation of concerns when other APIs will be published.
 
+Creating and deleting an API Key can be done at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
+
+Alternatively, it can also be created using an API. The root for this API is :
+```
+https://app.circular.fashion/users/api/v<user-api-version>/api-key
+```
+It uses the same authentication method as the other usual requests.
+
 ## Obtain an API key
-Obtain an API key at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
-Alternatively, you can use the API to create an API key:
+When logged in, obtain an API key at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
+
+If facing a `403 - Forbidden` error, contact us at info@circular.fashion to ensure the API is enabled for your account.
+
+Alternatively, you can use the API to create an API key, eg:
 ```
-POST /users/api/v1/api-key/
+POST https://app.circular.fashion/users/api/v1/api-key/
 ```
-This key can only be viewed **once**. _We will not save your API key in your profile._
+
+This key can only be viewed **once**. _The API key is not saved in your profile._
 
 The API key is generated for the company of the requesting user and returned in a JSON with status code 200:
-`{"generated_key": <key>}` On authentication failure a `403` error is returned.
+`{"generated_key": <key>}`. On authentication failure a `403` error is returned.
 
 If a key already exists for the company, a new one will be created. The old one will be revoked and can no longer be used.
 
 > Please note that the API key is on a **company basis**, not on a user basis.
 
-## Use the API key
-When sending a request to any endpoint, the `HTTP header` must contain `Authorization: Api-Key <key>`:
-```
-Content-Type: application/json
-Authorization: Api-Key <key>
-```
-
 ## Revoke API key
+When logged in, delete the API key at [https://app.circular.fashion/users/api-key](https://app.circular.fashion/users/api-key).
+
+Alternatively, you can use the API to delete an API key, eg:
 ```
-DELETE /users/api/v1/api-key/
+DELETE https://app.circular.fashion/users/api/v1/api-key/
 ```
 ### Response
 If an API key exists, it will be revoked. If no API key exists, this information will not be disclosed to the user.
@@ -65,6 +73,13 @@ If an API key exists, it will be revoked. If no API key exists, this information
 It returns a JSON with status `200`: `{"success": true}`
 
 On authentication failure a `403` is returned.
+
+## Use the API key
+When sending a request to any endpoint, the `HTTP header` must contain `Authorization: Api-Key <key>`:
+```
+Content-Type: application/json
+Authorization: Api-Key <key>
+```
 
 ## Verify an API Key
 ```
